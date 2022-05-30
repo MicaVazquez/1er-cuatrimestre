@@ -1,0 +1,13 @@
+23:30:15 **** Incremental Build of configuration Debug for project ejercicio 1-1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicio 1-1.o" "..\\src\\ejercicio 1-1.c" 
+..\src\ejercicio 1-1.c: In function 'main':
+..\src\ejercicio 1-1.c:30:78: warning: "/*" within comment [-Wcomment]
+  printf("La suma entre %d y %d da como resultado %d", numero1,numero2,suma); /* prints !!!Hello World!!! */
+                                                                               
+gcc -o "ejercicio 1-1.exe" "src\\ejercicio 1-1.o" 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file ejercicio 1-1.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+
+23:30:16 Build Failed. 1 errors, 1 warnings. (took 984ms)
+

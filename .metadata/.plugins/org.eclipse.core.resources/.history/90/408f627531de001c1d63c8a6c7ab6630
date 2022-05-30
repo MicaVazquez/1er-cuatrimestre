@@ -1,0 +1,35 @@
+/*
+ ============================================================================
+ Name        : punteroEstructuras.c
+ Author      : Micaela
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+typedef struct
+{
+	int id;
+	char descripcion[31];
+	float precio;
+
+}eProducto;
+
+int main()
+{
+    eProducto miProducto = {1000,"OREO",120.31};
+	eProducto* pProducto;
+
+	pProducto = &miProducto;
+
+	printf("\n %d %s %f\n", (*pProducto).id, (*pProducto).descripcion, (*pProducto).precio);
+	printf("\n %4d %15s %4.2.f\n", pProducto->id, pProducto->descripcion, pProducto->precio);
+    printf("Hello World");
+
+    return 0;
+}

@@ -1,0 +1,7 @@
+09:52:09 **** Incremental Build of configuration Debug for project Clase8ArraysParalelos ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Clase8ArraysParalelos.o" "..\\src\\Clase8ArraysParalelos.c" 
+gcc -o Clase8ArraysParalelos.exe "src\\Clase8ArraysParalelos.o" "src\\alumnos.o" 
+
+09:52:10 Build Finished. 0 errors, 0 warnings. (took 721ms)
+

@@ -1,0 +1,9 @@
+20:40:10 **** Incremental Build of configuration Debug for project Clase8_ej1 ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Users/PC-INC/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.2.v20220201-1208/jre/bin/server;C:/Users/PC-INC/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.2.v20220201-1208/jre/bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Git\cmd;C:\Users\PC-INC\AppData\Local\Microsoft\WindowsApps;;C:\Users\PC-INC\eclipse\cpp-2022-03\eclipse;]
+
+20:40:11 Build Failed. 1 errors, 0 warnings. (took 313ms)
+

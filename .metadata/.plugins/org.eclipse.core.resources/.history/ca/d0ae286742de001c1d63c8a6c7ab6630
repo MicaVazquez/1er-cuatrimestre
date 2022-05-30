@@ -1,0 +1,58 @@
+/*
+ ============================================================================
+ Name        : 1.c
+ Author      : Micaela
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+/*
+Realizar una función que reciba un puntero a char y dos char.
+ La función deberá reemplazar en la cadena cada ocurrencia del primer carácter recibido, por el segundo.
+ Retornando la cantidad de reemplazos o -1 en caso de error
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int reemplazar(char* cadena,char primerCaracter,char segundoCaracter);
+
+int main(void) {
+
+	char palabra[51] = {"Hola mundo"};
+	char primer = 'a';
+	char segundo = 'o';
+
+	reemplazar(palabra,primer,segundo);
+	printf("%s",palabra);
+	return EXIT_SUCCESS;
+}
+
+int reemplazar(char* cadena,char primerCaracter,char segundoCaracter)
+{
+	int retorno = -1;
+	int i;
+	int t;
+
+	if(cadena != NULL)
+	{
+       if(strlen(cadena)>0)
+       {
+    	   retorno = 0;
+    	   t= strlen(cadena);
+    	   for(i=0;i<t;i++)
+    	   {
+              if(*(cadena+i) == primerCaracter)// puede igualar por que e un char no una cadena
+              {
+            	  *(cadena + i) = segundoCaracter;
+            	  retorno ++;
+              }
+    	   }
+       }
+	}
+
+
+
+	return retorno;
+}

@@ -1,0 +1,32 @@
+/*
+ ============================================================================
+ Name        : pruebaArch.c
+ Author      : Micaela
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+	//"D:\\carpeta\\archivo.txt" RUTA ABSOLUTA-partiendo de la raiz
+	//"/home/usuario2/archivo.txt"
+ FILE* fp;
+
+	fp = fopen("archivo.txt","w");//crear un arichivo
+
+	if(fp != NULL)
+	{
+        // lo usamos
+		fclose(;)
+	}
+	else
+	{
+       printf("Error abriendo archivo\n");
+	}
+	puts("!!!Hello World!!!"); /* prints !!!Hello World!!! */
+	return EXIT_SUCCESS;
+}

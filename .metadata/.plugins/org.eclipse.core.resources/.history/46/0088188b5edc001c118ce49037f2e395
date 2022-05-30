@@ -1,0 +1,79 @@
+/*
+ * album.h
+ *
+ *  Created on: 30 abr. 2022
+ *      Author: PC-INC
+ */
+
+#ifndef ALBUM_H_
+#define ALBUM_H_
+
+typedef struct
+{
+	int dia;
+	int mes;
+	int anio;
+
+}eFecha;
+
+typedef struct
+{
+	int codigoTipoArtista;//PK
+	char descripcionTipoArtista[51];
+
+}eTipoArtista;//(1, solista; 2, banda)
+
+typedef struct
+{
+	int codigoDeArtista;//PK
+	char nombreArtista[51];
+
+}eArtista;
+
+
+typedef struct
+{
+	int codigoDeDiscografica;//PK
+	char descripcionDiscografica[51];
+}eDiscografica;
+
+typedef struct
+{
+  int estado;
+  int codigoTipoArtista;//FK
+  int codigoDeArtista;//FK
+  int codigoDeDiscografica;//FK
+  int codigoDeAlbum;
+  char titulo[51];
+  eFecha fechaDePublicacion;
+  int importe;
+
+}eAlbum;
+
+int eAlbum_inicializar(eAlbum* list, int len);
+int eAlbum_alta(eAlbum list[], int len,eTipoArtista listaDeTipoArtista[],int limTipoArtista,eDiscografica listaDeDiscograficas[],int limDisc,eArtista listaDeArtistas[], int limArt);
+void eAlbum_imprimirUno(eAlbum unAlbum);
+void eAlbum_imprimirTodos(eAlbum* list, int largo);
+eFecha pedirFecha();
+int buscarLibre(eAlbum* list, int len);
+int eAlbum_encontrarPorCodigo(eAlbum* list, int len,int codigo);
+eAlbum cargarUno(eTipoArtista listaDeTipoArtista[],int limTipoArtista,eDiscografica listaDeDiscograficas[],int limDisc,eArtista listaDeArtistas[], int limArt);
+void eAlbum_modificar(eAlbum list[], int len);
+int eAlbum_baja(eAlbum* list, int len);
+void eAlbum_importeTotalPromedio(eAlbum lista[], int tam);
+void eAlbum_hardcodearDatos(eAlbum lista[]);
+void eAlbum_posterior(eAlbum list[], int len);
+void eAlbum_informar(eAlbum list[], int len);
+void eArtista_harcodear();
+void eTipoDeArtista_harcodear();
+void eDiscografica_harcodear();
+void eAlbum_listar(eAlbum list[], int tam);
+void eAlbum_mostrarTodosConDiscografica(eAlbum* albumes, int largo);
+void eAlbum_mostrarUnoConDiscografica(eAlbum unAlbum, eDiscografica discografica);
+void hardcodearTipoArtista(eTipoArtista lista[], int lim);
+void hardcodearDiscograficas(eDiscografica lista[], int lim);
+void hardcodearArtistas(eArtista lista[], int lim);
+
+
+
+#endif /* ALBUM_H_ */

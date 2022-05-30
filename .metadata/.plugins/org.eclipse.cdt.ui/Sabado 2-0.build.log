@@ -1,0 +1,7 @@
+11:25:46 **** Rebuild of configuration Debug for project Sabado 2-0 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Sabado 2-0.o" "..\\src\\Sabado 2-0.c" 
+gcc -o "Sabado 2-0.exe" "src\\Sabado 2-0.o" 
+
+11:25:48 Build Finished. 0 errors, 0 warnings. (took 1s.956ms)
+

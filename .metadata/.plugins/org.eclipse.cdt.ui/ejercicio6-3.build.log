@@ -1,0 +1,22 @@
+12:06:33 **** Incremental Build of configuration Debug for project ejercicio6-3 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicio6-3.o" "..\\src\\ejercicio6-3.c" 
+..\src\ejercicio6-3.c: In function 'main':
+..\src\ejercicio6-3.c:38:12: warning: right-hand operand of comma expression has no effect [-Wunused-value]
+     for(i=0,i<longitud; i++)
+            ^
+..\src\ejercicio6-3.c:38:28: error: expected ';' before ')' token
+     for(i=0,i<longitud; i++)
+                            ^
+..\src\ejercicio6-3.c:40:9: error: expected expression before ')' token
+      if()
+         ^
+..\src\ejercicio6-3.c:71:5: warning: implicit declaration of function 'stcat' [-Wimplicit-function-declaration]
+     stcat(apeNom, ", ");
+     ^~~~~
+..\src\ejercicio6-3.c:23:22: warning: unused variable 'contador' [-Wunused-variable]
+     int i, longitud, contador;
+                      ^~~~~~~~
+
+12:06:34 Build Failed. 2 errors, 3 warnings. (took 635ms)
+

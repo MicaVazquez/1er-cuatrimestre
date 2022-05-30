@@ -1,0 +1,19 @@
+11:08:58 **** Rebuild of configuration Debug for project ejercicio8-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicio8-2.o" "..\\src\\ejercicio8-2.c" 
+..\src\ejercicio8-2.c:39:2: error: expected ':', ',', ';', '}' or '__attribute__' before 'int'
+  int idProducto;
+  ^~~
+..\src\ejercicio8-2.c: In function 'main':
+..\src\ejercicio8-2.c:54:20: error: 'eProductoAplee {aka struct <anonymous>}' has no member named 'estado'
+   productosAplee[i].estado = 0;
+                    ^
+..\src\ejercicio8-2.c:62:34: error: 'eProductoAplee {aka struct <anonymous>}' has no member named 'estado'
+      case 1: if(productosAplee[i].estado==0)
+                                  ^
+..\src\ejercicio8-2.c:47:17: warning: variable 'productosAplee' set but not used [-Wunused-but-set-variable]
+  eProductoAplee productosAplee[CANT];
+                 ^~~~~~~~~~~~~~
+
+11:09:01 Build Failed. 3 errors, 1 warnings. (took 2s.340ms)
+
