@@ -1,0 +1,440 @@
+/*
+ * entidad.c
+ *
+ *  Created on: 2 jul. 2022
+ *      Author: PC-INC
+ */
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include "entidad.h"
+#include "LinkedList.h"
+//id,tipo,cantidad,importe
+eEntidad* eEntidad_new()
+{
+	eEntidad* puntero;
+
+	puntero =  (eEntidad*)malloc(sizeof(eEntidad));
+
+	return puntero;
+}
+eEntidad* eEntidad_newParametros(char* idStr,char*descripcion,char*idPropietario,char*power,char*ataque)
+{
+
+	eEntidad*  unEntidad = eEntidad_new();
+
+
+	    if(unEntidad != NULL && idStr != NULL && descripcion != NULL && idPropietario != NULL && power != NULL && ataque != NULL)
+	    {
+            if(eEntidad_setId(unEntidad, atoi(idStr)) == -1 ||
+	    			eEntidad_setDescripcion(unEntidad, descripcion) == -1 ||
+					eEntidad_setIdPropietario(unEntidad,atoi(idPropietario))== -1 ||
+					eEntidad_setPower(unEntidad, atoi(power)) == -1 ||
+					eEntidad_setAtaque(unEntidad,atoi(ataque))== -1 )
+	    	{
+	    		eEntidad_delete(unEntidad);
+	    	}
+	    }
+	return unEntidad;
+}
+
+
+void eEntidad_delete(eEntidad* this)
+{
+	if(this != NULL)
+	{
+		free(this);
+	}
+}
+
+
+int eEntidad_setId(eEntidad* this,int id)
+{
+	int retorno = -1;
+
+	if(this != NULL && id > 0)
+	{
+		this->id = id;
+		retorno = 0;
+	}
+	return retorno;
+}
+
+int eEntidad_getId(eEntidad* this,int* id)
+{
+	int retorno = -1;
+
+	if(this!= NULL && id != NULL)
+	{
+		*id = this->id;
+		retorno = 0;
+	}
+	return retorno;
+}
+
+int eEntidad_setDescripcion(eEntidad* this,char* descripcion)
+{
+	int retorno =-1;
+
+	if(this != NULL && descripcion != NULL)
+	{
+		strcpy(this->descripcion,descripcion);
+		retorno = 0;
+	}
+	return retorno;
+
+}
+int eEntidad_getDescripcion(eEntidad* this,char* descripcion)
+{
+	int retorno = -1;
+
+	if(this!= NULL && descripcion != NULL)
+	{
+		strcpy(descripcion,this->descripcion);
+		retorno = 0;
+	}
+
+	return retorno;
+}
+
+int eEntidad_setIdPropietario(eEntidad* this,int idPropietario)
+{
+	int retorno = -1;
+
+	if(this != NULL && idPropietario > 0)
+	{
+		this->idPropietario = idPropietario;
+		retorno = 0;
+	}
+
+	return retorno;
+}
+int eEntidad_getIdPropietario(eEntidad* this,int* idPropietario)
+{
+	int retorno = -1;
+
+	if(this!= NULL && idPropietario != NULL)
+	{
+		*idPropietario = this->idPropietario;
+		retorno = 0;
+	}
+	return retorno;
+}
+
+int eEntidad_setPower(eEntidad* this,int power)
+{
+	int retorno = -1;
+
+	if(this != NULL && power > 0)
+	{
+		this->power = power;
+		retorno = 0;
+	}
+
+	return retorno;
+}
+int eEntidad_getPower(eEntidad* this,int* power)
+{
+	int retorno = -1;
+
+	if(this!= NULL && power!= NULL)
+	{
+		*power = this->power;
+		retorno = 0;
+	}
+	return retorno;
+}
+
+int eEntidad_setAtaque(eEntidad* this,int ataque)
+{
+	int retorno = -1;
+
+	if(this != NULL && ataque > 0)
+	{
+		this->ataque = ataque;
+		retorno = 0;
+	}
+	return retorno;
+}
+
+int eEntidad_getAtaque(eEntidad* this,int* ataque)
+{
+	int retorno = -1;
+
+	if(this!= NULL && ataque!= NULL)
+	{
+		*ataque = this->ataque;
+		retorno = 0;
+	}
+	return retorno;
+}
+
+void eEntidad_printOne(eEntidad* unEntidad)
+{
+
+	int id;
+	char descripcion[400];
+	int idPropietario;
+	int power;
+	int ataque;
+
+	   char datoSuper[2][100] = {"DC","MARVEL"};
+
+	eEntidad_getId(unEntidad, &id);
+	eEntidad_getDescripcion(unEntidad, descripcion);
+	eEntidad_getIdPropietario(unEntidad, &idPropietario);
+	eEntidad_getPower(unEntidad, &power);
+	eEntidad_getAtaque(unEntidad, &ataque);
+
+
+	printf("\n%d   %s   %.2f   %s    %d    %.2f\n",id,descripcion,datoSuper[idPropietario-1],power,ataque);
+
+}
+
+int eEntidad_sortPower(void* p1,void* p2)
+{
+	int retorno;
+	int cuota1=0;
+	int cuota2=0;
+
+	eEntidad* entidad1 = (eEntidad*)p1;
+	eEntidad* entidad2 = (eEntidad*)p2;
+
+	    if(entidad1!=NULL && entidad2!=NULL)
+	    {
+	        eEntidad_getPower(entidad1, &cuota1);
+	        eEntidad_getPower(entidad2, &cuota2);
+
+	       if(cuota1>cuota2)
+	       {
+	           retorno = 1;
+	       }
+	       else if(cuota1<cuota2)
+	       {
+	           retorno = -1;
+	       }
+	       else
+	       {
+	           retorno = 0;
+	       }
+
+	    }
+	return retorno;
+}
+
+/*
+int eEntidad_sortName(void* p1,void*p2)
+{
+	char name1[50];
+	char name2[50];
+	int rtn;
+
+	eEntidad* entidad1 = (eEntidad*)p1;
+	eEntidad* entidad2 = (eEntidad*)p2;
+
+	if(entidad1 != NULL && entidad2 != NULL)
+	{
+       eEntidad_getNombre(entidad1, name1);
+       eEntidad_getNombre(entidad2, name2);
+
+       rtn =stricmp(name1,name2);
+	}
+
+	return rtn;
+}
+
+
+void eEntidad_printOneDedicacion(eEntidad* unEntidad)
+{
+
+	int id;
+	char nombre[50];
+	char empleo[200];
+	int horasTrabajadas;
+	int edad;
+	char dedicacion[200];
+
+	eEntidad_getId(unEntidad, &id);
+	eEntidad_getNombre(unEntidad, nombre);
+	eEntidad_getEmpleo(unEntidad, empleo);
+	eEntidad_getHorasTrabajadas(unEntidad, &horasTrabajadas);
+	eEntidad_getEdad(unEntidad, &edad);
+	eEntidad_getDedicacion(unEntidad, dedicacion);
+
+	printf("\n%-5d %-15s  %-15s %-10d %-17d %s\n",id,nombre,empleo,edad,horasTrabajadas,dedicacion);
+
+}
+
+int eEntidad_darValorDedicacion(eEntidad* unEntidad)
+{
+	int retorno;
+	char dedicacion[200];
+   eEntidad_getDedicacion(unEntidad, dedicacion);
+
+   if(stricmp(dedicacion,"estandar")==0)
+   {
+     retorno = 1;
+   }
+
+   else if(stricmp(dedicacion,"sobre la media")==0)
+   {
+	   retorno = 2;
+   }
+
+   else if(stricmp(dedicacion,"excesivo")==0)
+   {
+	   retorno = 3;
+   }
+   return retorno;
+}
+
+int eEntidad_sortDedicacion(void* p1,void* p2)
+{
+	int retorno;
+	int retorno1=0;
+	int retorno2=0;
+
+	eEntidad* entidad1 = (eEntidad*)p1;
+	eEntidad* entidad2 = (eEntidad*)p2;
+
+	    if(entidad1!=NULL && entidad2!=NULL)
+	    {
+           retorno1=eEntidad_darValorDedicacion(entidad1);
+           retorno2=eEntidad_darValorDedicacion(entidad2);
+
+	       if(retorno1>retorno2)
+	       {
+	           retorno = 1;
+	       }
+	       else if(retorno1<retorno2)
+	       {
+	           retorno = -1;
+	       }
+	       else
+	       {
+	           retorno = 0;
+	       }
+
+	    }
+	return retorno;
+}
+
+
+int eEntidad_LastId(char* id)
+{
+	int exito = 0;
+
+	FILE* pFile;
+
+	pFile = fopen("src/lastId.csv","r");
+
+	if(pFile != NULL)
+	{
+		fscanf(pFile,"%[^\n]\n",id);
+
+		exito = 1;
+	}
+	fclose(pFile);
+
+	return exito;
+}
+
+
+int eEntidad_buscarIdMax(LinkedList* pArrayListPassenger)
+{
+	int i;
+	int tam=ll_len(pArrayListPassenger);
+	int idMax=0;
+	eEntidad* auxEntidad;
+
+	for(i=0;i<tam;i++)
+	{
+		auxEntidad = (eEntidad*)ll_get(pArrayListPassenger,i);
+
+		if(auxEntidad->id>idMax)
+		{
+			idMax=auxEntidad->id;
+		}
+	}
+
+	return idMax;
+}
+
+int eEntidad_saveLastId(int lastId)
+{
+	int rtn = 0;
+	FILE* pFile;
+
+	pFile = fopen("src/lastId.csv","w");
+
+	if(pFile != NULL)
+	{
+		fprintf(pFile,"%d\n",lastId);
+		rtn = 1;
+	}
+
+	return rtn;
+}
+
+int eEntidad_sortCuotas(void* p1,void* p2)
+{
+	int retorno;
+	int cuota1=0;
+	int cuota2=0;
+
+	eEntidad* entidad1 = (eEntidad*)p1;
+	eEntidad* entidad2 = (eEntidad*)p2;
+
+	    if(entidad1!=NULL && entidad2!=NULL)
+	    {
+            eEntidad_getCuotas(entidad1, &cuota1);
+	        eEntidad_getCuotas(entidad2, &cuota2);
+
+	       if(cuota1>cuota2)
+	       {
+	           retorno = 1;
+	       }
+	       else if(cuota1<cuota2)
+	       {
+	           retorno = -1;
+	       }
+	       else
+	       {
+	           retorno = 0;
+	       }
+
+	    }
+	return retorno;
+}
+
+int eEntidad_sortId(void* p1,void* p2)
+{
+	int retorno;
+	int id1=0;
+	int id2=0;
+
+	eEntidad* entidad1 = (eEntidad*)p1;
+	eEntidad* entidad2 = (eEntidad*)p2;
+
+	    if(entidad1!=NULL && entidad2!=NULL)
+	    {
+	        eEntidad_getIdTipo(entidad1, &id1);
+	        eEntidad_getId(entidad2, &id2);
+
+	       if(id1>id2)
+	       {
+	           retorno = 1;
+	       }
+	       else if(id1<id2)
+	       {
+	           retorno = -1;
+	       }
+	       else
+	       {
+	           retorno = 0;
+	       }
+
+	    }
+	return retorno;
+}
+*/

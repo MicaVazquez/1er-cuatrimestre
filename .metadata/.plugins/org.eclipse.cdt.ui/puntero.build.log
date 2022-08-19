@@ -1,1 +1,11 @@
-Info: Nothing to build for puntero
+22:05:52 **** Rebuild of configuration Debug for project puntero ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\puntero.o" "..\\src\\puntero.c" 
+..\src\puntero.c: In function 'main':
+..\src\puntero.c:27:9: warning: variable 'c' set but not used [-Wunused-but-set-variable]
+  int b, c;
+         ^
+gcc -o puntero.exe "src\\puntero.o" 
+
+22:05:53 Build Finished. 0 errors, 1 warnings. (took 730ms)
+

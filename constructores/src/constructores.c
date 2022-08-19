@@ -28,12 +28,14 @@ int setDni(eAlumno * this,int dni);
 //int getDni(eAlumno * this ,int * dni);1 forma
 int getDni(eAlumno * this);
 //completar get y set restantes
-char* setName(eAlumno * this,char* name);
+int setName(eAlumno * this,char* name);
+int getName(eAlumno * this ,char * name);
 int main(void)
 {
 	setbuf(stdout,NULL);
 	eAlumno * pAlumno;
 	//int dni;
+	char nombre[51] = {"mica"};
 
 
 
@@ -50,7 +52,8 @@ int main(void)
 	if(pAlumno != NULL)
 	{
 
-		printf("%s -- %s -- %d",pAlumno->nombre,pAlumno->apellido,getDni(pAlumno));//pasar a una funcion
+        getName(pAlumno,nombre);
+		printf("%s -- %s -- %d",nombre,pAlumno->apellido,getDni(pAlumno));//pasar a una funcion
 
 
 	}
@@ -103,7 +106,8 @@ eAlumno * newAlumnoParam(char * nombre,char * apellido,int dni)
 
 	if(nombre != NULL && apellido !=NULL && alumno != NULL)
 	{
-		if(setDni(alumno,dni) == -1)
+		if(setDni(alumno,dni) == -1 &&
+				setName(alumno,nombre) == -1)
 		{
 			free(alumno);
 
@@ -112,14 +116,8 @@ eAlumno * newAlumnoParam(char * nombre,char * apellido,int dni)
 		else
 		{
 			strcpy( alumno->apellido  ,apellido);
-			strcpy( alumno->nombre ,nombre);
 
 		}
-
-
-
-
-
 
 	}
 
@@ -128,7 +126,7 @@ eAlumno * newAlumnoParam(char * nombre,char * apellido,int dni)
 }
 
 
-int setDni(eAlumno * this,int dni)
+int setDni(eAlumno * this,int dni)//setear una variable
 {
 	int retorno = -1;
 
@@ -163,7 +161,7 @@ int setDni(eAlumno * this,int dni)
 	return retorno;
 }
 */
-int getDni(eAlumno * this)
+int getDni(eAlumno * this)//obetener una variable
 {
 	int retorno =-1;
 
@@ -178,16 +176,57 @@ int getDni(eAlumno * this)
 	return retorno;
 }
 
-char* setName(eAlumno * this,char* name)
+int setName(eAlumno * this,char* name)
 {
+	int retorno = -1;
 
-	if(this != NULL)
+	if(this != NULL && name != NULL)
+	{
+		strcpy(this->nombre,name);
+
+		retorno = 0;
+	}
+
+	return retorno;
+}
+
+int getName(eAlumno * this ,char * name)
+{
+	int retorno = -1;
+
+	if(this!= NULL && name != NULL)
 	{
 
-
-		strcpy(this->nombre,name);
+		strcpy(name,this->nombre);
+		retorno = 0;
 
 	}
 
-	return name;
+	return retorno;
 }
+/*int setNombre(eAlumno* this, char nombre[])
+{
+	int rtn;
+	rtn = -1;
+
+	if(this != NULL && strlen(nombre) > 1)
+	{
+		strcpy(this->nombre, nombre);
+		rtn = 0;
+	}
+
+	return rtn;
+}
+
+char* getName(eAlumno* this)
+{
+	char* auxiliar[1024];
+	if(this != NULL)
+	{
+		strcpy(auxiliar, this->nombre);
+	}
+
+	return *auxiliar;
+}
+
+*/

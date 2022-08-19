@@ -1,0 +1,7 @@
+15:54:40 **** Incremental Build of configuration Debug for project parcial2Recu ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -o parcial2Recu.exe "src\\Controller.o" "src\\LinkedList.o" "src\\main.o" "src\\parser.o" "src\\participante.o" "src\\validaciones.o" 
+
+15:54:41 Build Finished. 0 errors, 0 warnings. (took 843ms)
+

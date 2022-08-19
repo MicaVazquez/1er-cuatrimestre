@@ -1,0 +1,5 @@
+15:42:53 **** Clean-only build of configuration Debug for project pruebaC ****
+rm -rf src/main.d src/main.o src/Controller.d src/parser.d src/Controller.o src/parser.o src/validaciones.d src/validaciones.o pruebaC.exe src/LinkedList.o src/entidad.o src/LinkedList.d src/entidad.d 
+
+15:42:54 Build Finished. 0 errors, 0 warnings. (took 892ms)
+

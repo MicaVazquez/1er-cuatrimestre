@@ -1,7 +1,7 @@
-00:07:52 **** Incremental Build of configuration Debug for project punteroEstructuras ****
+22:05:53 **** Rebuild of configuration Debug for project punteroEstructuras ****
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\punteroEstructuras.o" "..\\src\\punteroEstructuras.c" 
 gcc -o punteroEstructuras.exe "src\\punteroEstructuras.o" 
 
-00:07:55 Build Finished. 0 errors, 0 warnings. (took 2s.277ms)
+22:05:53 Build Finished. 0 errors, 0 warnings. (took 619ms)
 

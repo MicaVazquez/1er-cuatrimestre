@@ -15,6 +15,9 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\PC-INC\eclipse-workspace\TP4\likedList_Eclipse_v9\likedList"/>
+			<item value="C:\Users\PC-INC\Downloads\TP4\likedList_Eclipse_v9\likedList"/>
+			<item value="C:\Users\PC-INC\Downloads\TP4"/>
 			<item value="C:\Users\PC-INC\Downloads\eclipse_tp3_v4 (1)\eclipse_tp3_v4\tp3_windows"/>
 			<item value="C:\Users\PC-INC\Documents\Clase8_Ejercicio1_Resuelto"/>
 		</list>
@@ -26,6 +29,8 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\PC-INC\eclipse-workspace\ejercicio 1"/>
+			<item value="C:\Users\PC-INC\eclipse-workspace\hola mundo"/>
 			<item value="C:\Users\PC-INC\eclipse-workspace\parcial1"/>
 			<item value="C:\Users\PC-INC\eclipse-workspace\TP_2"/>
 		</list>

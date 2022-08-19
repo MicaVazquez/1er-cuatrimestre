@@ -176,3 +176,6 @@ void getLetrasYNumeros(char mensaje[],char input[],int tamMin,int tamMax)
 
     }while(retorno==0);
 }
+
+
+

@@ -1,1 +1,7 @@
-Info: Nothing to build for punteroFuncion
+22:05:53 **** Rebuild of configuration Debug for project punteroFuncion ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\punteroFuncion.o" "..\\src\\punteroFuncion.c" 
+gcc -o punteroFuncion.exe "src\\punteroFuncion.o" 
+
+22:05:54 Build Finished. 0 errors, 0 warnings. (took 658ms)
+

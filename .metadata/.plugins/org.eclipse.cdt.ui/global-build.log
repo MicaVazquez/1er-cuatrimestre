@@ -1,8 +1,30 @@
-20:38:06 **** Rebuild of configuration Debug for project TP_2 ****
+20:39:04 **** Incremental Build of configuration Debug for project pruebaF ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\avion.o" "..\\src\\avion.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validaciones.o" "..\\src\\validaciones.c" 
-gcc -o TP_2.exe "src\\TP_2.o" "src\\arrayPassenger.o" "src\\avion.o" "src\\validaciones.o" 
-Info: Nothing to build for TP_2
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
+gcc -o pruebaF.exe "src\\Controller.o" "src\\LinkedList.o" "src\\entidad.o" "src\\main.o" "src\\parser.o" "src\\validaciones.o" 
+Info: Nothing to build for pruebaF
+20:40:03 **** Incremental Build of configuration Debug for project pruebaF ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o pruebaF.exe "src\\Controller.o" "src\\LinkedList.o" "src\\entidad.o" "src\\main.o" "src\\parser.o" "src\\validaciones.o" 
+20:42:34 **** Incremental Build of configuration Debug for project pruebaF ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -o pruebaF.exe "src\\Controller.o" "src\\LinkedList.o" "src\\entidad.o" "src\\main.o" "src\\parser.o" "src\\validaciones.o" 
+20:57:39 **** Incremental Build of configuration Debug for project pruebaF ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
+gcc -o pruebaF.exe "src\\Controller.o" "src\\LinkedList.o" "src\\entidad.o" "src\\main.o" "src\\parser.o" "src\\validaciones.o" 
+20:58:31 **** Incremental Build of configuration Debug for project pruebaF ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
+gcc -o pruebaF.exe "src\\Controller.o" "src\\LinkedList.o" "src\\entidad.o" "src\\main.o" "src\\parser.o" "src\\validaciones.o" 
+21:00:59 **** Incremental Build of configuration Debug for project pruebaF ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -o pruebaF.exe "src\\Controller.o" "src\\LinkedList.o" "src\\entidad.o" "src\\main.o" "src\\parser.o" "src\\validaciones.o" 
+Info: Nothing to build for pruebaF
+Info: Nothing to build for pruebaF
+Info: Nothing to build for pruebaF
+Info: Nothing to build for pruebaF
+Info: Nothing to build for pruebaF

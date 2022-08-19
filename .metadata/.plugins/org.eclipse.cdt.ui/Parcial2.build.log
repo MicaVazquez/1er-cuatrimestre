@@ -1,0 +1,49 @@
+13:11:22 **** Rebuild of configuration Debug for project Parcial2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial2.o" "..\\src\\Parcial2.c" 
+..\src\Parcial2.c: In function 'main':
+..\src\Parcial2.c:52:10: warning: implicit declaration of function 'controller_loadFromText' [-Wimplicit-function-declaration]
+       if(controller_loadFromText("data.csv",lista)==1)
+          ^~~~~~~~~~~~~~~~~~~~~~~
+..\src\Parcial2.c:67:10: warning: implicit declaration of function 'controller_loadFromBinary' [-Wimplicit-function-declaration]
+       if(controller_loadFromBinary("data.bin", lista)==1)
+          ^~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\Parcial2.c:80:18: warning: implicit declaration of function 'controller_addPassenger' [-Wimplicit-function-declaration]
+               if(controller_addPassenger(lista)==1)
+                  ^~~~~~~~~~~~~~~~~~~~~~~
+..\src\Parcial2.c:93:16: warning: implicit declaration of function 'controller_editPassenger' [-Wimplicit-function-declaration]
+                controller_editPassenger(lista);
+                ^~~~~~~~~~~~~~~~~~~~~~~~
+..\src\Parcial2.c:104:16: warning: implicit declaration of function 'controller_removePassenger' [-Wimplicit-function-declaration]
+                controller_removePassenger(lista);
+                ^~~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\Parcial2.c:115:16: warning: implicit declaration of function 'controller_ListPassenger' [-Wimplicit-function-declaration]
+                controller_ListPassenger(lista);
+                ^~~~~~~~~~~~~~~~~~~~~~~~
+..\src\Parcial2.c:126:16: warning: implicit declaration of function 'controller_sortPassenger' [-Wimplicit-function-declaration]
+                controller_sortPassenger(lista);
+                ^~~~~~~~~~~~~~~~~~~~~~~~
+..\src\Parcial2.c:137:21: warning: implicit declaration of function 'controller_saveAsText' [-Wimplicit-function-declaration]
+                  if(controller_saveAsText("data.csv", lista)==1)
+                     ^~~~~~~~~~~~~~~~~~~~~
+..\src\Parcial2.c:151:19: warning: implicit declaration of function 'controller_saveAsBinary' [-Wimplicit-function-declaration]
+                if(controller_saveAsBinary("data.bin", lista)==1)
+                   ^~~~~~~~~~~~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
+..\src\LinkedList.c: In function 'll_getLastNode':
+..\src\LinkedList.c:748:28: warning: implicit declaration of function 'll_getNextNode' [-Wimplicit-function-declaration]
+                 lastNode = ll_getNextNode(retornoNode);
+                            ^~~~~~~~~~~~~~
+..\src\LinkedList.c:748:26: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+                 lastNode = ll_getNextNode(retornoNode);
+                          ^
+..\src\LinkedList.c: At top level:
+..\src\LinkedList.c:756:7: error: conflicting types for 'll_getNextNode'
+ Node* ll_getNextNode(Node* this)
+       ^~~~~~~~~~~~~~
+..\src\LinkedList.c:748:28: note: previous implicit declaration of 'll_getNextNode' was here
+                 lastNode = ll_getNextNode(retornoNode);
+                            ^~~~~~~~~~~~~~
+
+13:11:23 Build Failed. 1 errors, 11 warnings. (took 796ms)
+

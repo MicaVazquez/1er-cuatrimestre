@@ -1,8 +1,9 @@
-23:57:12 **** Incremental Build of configuration Debug for project parcial1 ****
+06:39:47 **** Rebuild of configuration Debug for project parcial1 ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\parcial1.o" "..\\src\\parcial1.c" 
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\album.o" "..\\src\\album.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validaciones.o" "..\\src\\validaciones.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\parcial1.o" "..\\src\\parcial1.c" 
 gcc -o parcial1.exe "src\\album.o" "src\\parcial1.o" "src\\validaciones.o" 
 
-23:57:14 Build Finished. 0 errors, 0 warnings. (took 1s.970ms)
+06:39:49 Build Finished. 0 errors, 0 warnings. (took 2s.85ms)
 

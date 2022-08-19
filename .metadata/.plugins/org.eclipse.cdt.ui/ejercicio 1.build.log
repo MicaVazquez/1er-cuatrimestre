@@ -1,7 +1,22 @@
-11:25:51 **** Rebuild of configuration Debug for project ejercicio 1 ****
+22:05:34 **** Rebuild of configuration Debug for project ejercicio 1 ****
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicio 1.o" "..\\src\\ejercicio 1.c" 
-gcc -o "ejercicio 1.exe" "src\\ejercicio 1.o" 
+..\src\ejercicio 1.c: In function 'getInt':
+..\src\ejercicio 1.c:81:5: error: too few arguments to function 'getString'
+     getString(auxiliar,mensaje);
+     ^~~~~~~~~
+..\src\ejercicio 1.c:48:6: note: declared here
+ void getString(char mensaje[],char input[],int tam)
+      ^~~~~~~~~
+..\src\ejercicio 1.c:77:9: warning: variable 'largo' set but not used [-Wunused-but-set-variable]
+     int largo;
+         ^~~~~
+..\src\ejercicio 1.c:76:9: warning: unused variable 'i' [-Wunused-variable]
+     int i;
+         ^
+..\src\ejercicio 1.c:74:6: warning: unused variable 'esNumero' [-Wunused-variable]
+  int esNumero;
+      ^~~~~~~~
 
-11:25:52 Build Finished. 0 errors, 0 warnings. (took 1s.150ms)
+22:05:35 Build Failed. 1 errors, 3 warnings. (took 419ms)
 
